@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BhuMitra App User Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c23 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-title {
+            color: #2d5016;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #4a7c23;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-number {
+            background: linear-gradient(135deg, #4a7c23 0%, #6ba832 100%);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .subsection {
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #4a7c23;
+        }
+
+        .subsection h3 {
+            color: #2d5016;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .feature-list li {
+            padding: 12px 0 12px 35px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4a7c23;
+            font-weight: bold;
+            font-size: 1.4em;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .warning-box:before {
+            content: "⚠️";
+            font-size: 2em;
+            position: absolute;
+            top: 15px;
+            left: 20px;
+        }
+
+        .warning-box h3 {
+            color: #856404;
+            margin-left: 50px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .warning-content {
+            margin-left: 50px;
+        }
+
+        .do-box {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .do-box:before {
+            content: "✅ ";
+            font-size: 1.2em;
+        }
+
+        .dont-box {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .dont-box:before {
+            content: "❌ ";
+            font-size: 1.2em;
+        }
+
+        .info-box {
+            background: #d1ecf1;
+            border: 2px solid #17a2b8;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .info-box:before {
+            content: "ℹ️";
+            font-size: 2em;
+            position: absolute;
+            top: 15px;
+            left: 20px;
+        }
+
+        .info-box h3 {
+            color: #0c5460;
+            margin-left: 50px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .info-content {
+            margin-left: 50px;
+        }
+
+        .button-demo {
+            display: inline-block;
+            background: linear-gradient(135deg, #4a7c23 0%, #6ba832 100%);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(74, 124, 35, 0.3);
+            transition: transform 0.2s;
+        }
+
+        .button-demo:hover {
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            background: #2d5016;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+
+        strong {
+            color: #2d5016;
+        }
+
+        .highlight {
+            background: #ffeb3b;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .content {
+                padding: 20px 15px;
+            }
+
+            .section-title {
+                font-size: 1.5em;
+            }
+
+            .warning-box, .info-box {
+                padding: 15px;
+            }
+
+            .warning-box h3, .info-box h3 {
+                margin-left: 35px;
+                font-size: 1.2em;
+            }
+
+            .warning-content, .info-content {
+                margin-left: 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌾 BhuMitra App</h1>
+            <p>Complete User Guide</p>
+        </div>
+
+        <div class="content">
+            <!-- Section 1 -->
+            <div class="section">
+                <h2 class="section-title">
+                    <span class="section-number">1</span>
+                    Login / Register Screen
+                </h2>
+                <p>When you first open the app, you must <strong>Register</strong> (create a new account) or <strong>Login</strong>.</p>
+                <ul class="feature-list">
+                    <li>Use your <strong>Email and Password</strong> for traditional login</li>
+                    <li>Use the <strong>Google Sign-In</strong> button for quick access</li>
+                    <li>Once successfully logged in, you will be navigated to the <strong>Home Screen</strong></li>
+                </ul>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="section">
+                <h2 class="section-title">
+                    <span class="section-number">2</span>
+                    Home Screen (Dashboard)
+                </h2>
+                <p>This is the main dashboard that appears after login. It contains three main sections:</p>
+
+                <div class="subsection">
+                    <h3>📏 Start Measuring Card</h3>
+                    <p>This is the main card at the top. Click the <span class="button-demo">Measure Now</span> button here to open the Map and start a new land measurement.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3>⚡ Quick Actions Section</h3>
+                    <ul class="feature-list">
+                        <li><strong>Saved Plots:</strong> Opens a list of all your previously saved land measurements. You can view details, delete old records, or share them from here.</li>
+                        <li><strong>Unit Converter:</strong> A tool to quickly convert values between different land units (e.g., convert 5 Acres to Bigha) without using the map.</li>
+                        <li><strong>Help:</strong> Opens this User Guide.</li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3>🎛️ Navigation Controls</h3>
+                    <ul class="feature-list">
+                        <li><strong>Menu/Sidebar (Top Left):</strong> Tap the menu icon to access your Profile, Settings, and other options.</li>
+                        <li><strong>Logout button (Top Right):</strong> Tap this button to logout from your account.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="section">
+                <h2 class="section-title">
+                    <span class="section-number">3</span>
+                    Boundary Marking Screen (The Map)
+                </h2>
+                <p>When you click <strong>"Measure Now"</strong>, you reach this screen to mark boundaries.</p>
+
+                <div class="subsection">
+                    <h3>🗺️ Screen Controls</h3>
+                    <ul class="feature-list">
+                        <li><strong>The Map:</strong> Shows your current location or the area you are viewing.</li>
+                        <li><strong>Search Bar (Top):</strong> Type a village, city, or area name here to quickly jump to that location on the map.</li>
+                        <li><strong>Map Type Button:</strong> Select between "Normal" (Road) view and "Satellite" view to see actual ground details.</li>
+                        <li><strong>Current Location Button:</strong> Instantly re-centers the map to where you are standing right now.</li>
+                        <li><strong>Calculate Button (Bottom):</strong> Appears after you mark points. Press this to finalize your measurement.</li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3>📍 How to Measure</h3>
+                    <ul class="feature-list">
+                        <li><strong>Place Points:</strong> Tap carefully on the map at the corners of the field. Each tap places a "Marker".</li>
+                        <li><strong>Undo/Redo:</strong> If you place a point incorrectly, use the Undo icon to remove it.</li>
+                        <li><strong>Reset:</strong> Clears all points if you want to start over completely.</li>
+                    </ul>
+                </div>
+
+                <div class="warning-box">
+                    <h3>CRITICAL WARNING: HOW TO MARK BOUNDARIES</h3>
+                    <div class="warning-content">
+                        <p><strong>It is crucial to mark the points in the correct order to get an accurate area.</strong></p>
+                        
+                        <div class="do-box">
+                            <strong>DO THIS (Correct Way):</strong>
+                            <ul style="margin-left: 20px; margin-top: 10px;">
+                                <li>Mark the points in a <strong>SEQUENCE</strong> (Circle-wise).</li>
+                                <li>Start at one corner, then go to the immediate next corner along the boundary line (A → B → C → D).</li>
+                                <li><strong>Result:</strong> This forms a clean, closed shape (Polygon).</li>
+                            </ul>
+                        </div>
+
+                        <div class="dont-box">
+                            <strong>DO NOT DO THIS (Wrong Way):</strong>
+                            <ul style="margin-left: 20px; margin-top: 10px;">
+                                <li><strong>Do NOT mark diagonally</strong> (Criss-Cross).</li>
+                                <li>Example: Do not mark Top-Left corner, then jump to Bottom-Right corner.</li>
+                                <li><strong>Why?</strong> This causes the boundary lines to INTERSECT (cut each other), creating a "bow-tie" or "hourglass" shape. The app cannot calculate the area of self-intersecting shapes correctly.</li>
+                            </ul>
+                        </div>
+
+                        <p style="margin-top: 15px;"><strong>Once you have formed a proper closed shape, click the <span class="highlight">Calculate</span> button.</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4 -->
+            <div class="section">
+                <h2 class="section-title">
+                    <span class="section-number">4</span>
+                    Area Result Screen
+                </h2>
+                <p>This screen displays the final measurement details.</p>
+
+                <div class="subsection">
+                    <h3>📊 Total Area Cards</h3>
+                    <p>You will see the total calculated area displayed in multiple standard units:</p>
+                    <ul class="feature-list">
+                        <li>Square Feet</li>
+                        <li>Square Meter</li>
+                        <li>Square Yard</li>
+                        <li>Acre</li>
+                        <li>Hectare</li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3>🔄 Action Buttons</h3>
+                    <ul class="feature-list">
+                        <li><strong>Share Button:</strong> Click this to share the text summary of your measurement with others (via WhatsApp, SMS, etc.).</li>
+                        <li><strong>Save Plot Icon:</strong> Click this to save this measurement into your records history.</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h3>CUSTOM UNIT CALCULATION & BASE UNIT</h3>
+                    <div class="info-content">
+                        <p>At the bottom of the result screen, you will see the "Custom Unit" section. This is for converting the area into local units (like Bigha, Guntha, Kanal).</p>
+                        
+                        <p><strong>How to use it correctly:</strong></p>
+                        <ol style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
+                            <li>Look at the <strong>Total Area</strong> displayed above.</li>
+                            <li>Identify the <strong>Base Unit</strong>. The values shown in the specific cards (e.g., the value below "Area Calculated Successfully" in <strong>Square Meter</strong> or other unit) represent your Base Unit.</li>
+                            <li>In the Custom Unit section, ensure the <strong>Dropdown Menu</strong> is set to the <em>same unit</em> you are looking at.
+                                <ul style="margin-left: 20px; margin-top: 5px;">
+                                    <li>Example: If you are converting the 'Square Meter' value, set the Dropdown to 'Square Meter'.</li>
+                                    <li>Example: If you are converting the 'Square Feet' value, set the Dropdown to 'Square Feet'.</li>
+                                </ul>
+                            </li>
+                            <li>Enter your local unit value (e.g., 1 Bigha = X Sq Meter).</li>
+                            <li>Press Calculate to get the result in your custom unit.</li>
+                        </ol>
+
+                        <p style="margin-top: 15px; background: #fff; padding: 10px; border-radius: 5px; border-left: 4px solid #dc3545;">
+                            <strong>⚠️ Mistake to Avoid:</strong> Do not leave the base unit and custom unit dropdown as 'Square Feet' if you are entering a 'Square Meter' value. The units must match!
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 5 -->
+            <div class="section">
+                <h2 class="section-title">
+                    <span class="section-number">5</span>
+                    Sidebar Menu Options
+                </h2>
+                <p>You can access these options by clicking the Menu icon (Hamburger icon) on the top-left of the Home Screen.</p>
+
+                <div class="subsection">
+                    <h3>🌐 Select Language</h3>
+                    <p>Change the app language between English and Hindi.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3>💬 Send Feedback</h3>
+                    <p>Use this to send suggestions or report issues via email.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3>ℹ️ About BhuMitra</h3>
+                    <p>View the App Version and privacy policy.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3>👤 Profile</h3>
+                    <ul class="feature-list">
+                        <li>View your registered Name and Email address, Address, Phone Number, and other details.</li>
+                        <li><strong>Edit profile:</strong> Update your personal information</li>
+                        <li><strong>Statistics:</strong> View your measurement statistics</li>
+                        <li><strong>Delete Account:</strong> Permanently remove your account</li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3>⚙️ Settings</h3>
+                    <ul class="feature-list">
+                        <li><strong>Dark Mode:</strong> Switch to a dark theme for better viewing in low light.</li>
+                        <li><strong>Default Map type:</strong> Select between "Normal" (Road) view and "Satellite" view to see actual ground details.</li>
+                        <li><strong>Default Unit:</strong> Select between "Square Feet" and "Square Meter" to see actual ground details.</li>
+                        <li><strong>Measurement Settings:</strong>
+                            <ul style="margin-left: 20px; margin-top: 5px;">
+                                <li><strong>Precision Level:</strong> Select no. of decimal places to be displayed in the result.</li>
+                                <li><strong>Auto Save Plots:</strong> Toggle to auto save plots after measurement.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Reset to Defaults:</strong> Reset all settings to their default values.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2024 BhuMitra - Your Land Measurement Companion</p>
+            <p style="margin-top: 10px; opacity: 0.8;">For more assistance, contact support through the app's feedback feature.</p>
+        </div>
+    </div>
+</body>
+</html>
